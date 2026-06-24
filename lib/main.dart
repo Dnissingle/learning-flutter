@@ -84,10 +84,17 @@ class MyApp extends StatelessWidget {
             final note = notes[index];
 
             return Card(
-              margin: EdgeInsets.all(8),
+              margin: EdgeInsets.all(10),
               child: ListTile(
                 title: Text(note.title),
-                subtitle: Text(note.description),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, // Aligns text to the left
+                  children: [
+                    Text(note.description),
+                    Text(
+                      note.toBuild),
+                  ],
+                ),
                 trailing: Icon(
                   note.isCompleted ? Icons.check : Icons.close,
                   color: note.isCompleted ? Colors.green : Colors.red,
