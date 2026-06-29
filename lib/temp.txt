@@ -1,0 +1,132 @@
+Row(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Colors.black),
+
+                  borderRadius: BorderRadius.circular(10),color: Colors.white),
+      child: const Padding(padding: EdgeInsets.all(10),
+      child: Text('Username:'),
+                )
+              ),
+            Expanded(
+            child: Container(
+              margin: const EdgeInsets.all(50),
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Colors.black),
+                    borderRadius: BorderRadius.circular(10),color: Colors.white),
+                child: const Padding(padding: EdgeInsets.all(10),
+                  child: Text('              '),
+                ),
+            ),
+            ),
+        ],
+        ),
+
+
+
+
+
+
+
+
+
+
+
+         Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: <Widget>[
+                          Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(width: 1, color: Colors.black),
+
+                                  borderRadius: BorderRadius.circular(10),color: Colors.white),
+                              child: const Padding(padding: EdgeInsets.all(10),
+                                child: Text('Username:'),
+                              )
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                  border: Border.all(width: 1, color: Colors.black),
+                                  borderRadius: BorderRadius.circular(10),color: Colors.white),
+                              child: const Padding(padding: EdgeInsets.all(10),
+                                child: Text('              '),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Row(
+                            children: <Widget>[
+                              Container(
+                                  decoration: BoxDecoration(
+                                      border: Border.all(width: 1, color: Colors.black),
+
+                                      borderRadius: BorderRadius.circular(10),color: Colors.white),
+                                  child: const Padding(padding: EdgeInsets.all(10),
+                                    child: Text('Password:'),
+                                  )
+                              ),
+                              Expanded(
+                                child: Container(
+                                  margin: const EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(width: 1, color: Colors.black),
+                                      borderRadius: BorderRadius.circular(10),color: Colors.white),
+                                  child: const Padding(padding: EdgeInsets.all(10),
+                                    child: Text('              '),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+
+
+//Exercises
+
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // 1. Write your variables and data lists here (Marked as final)
+  final List<String> names = const ['name1', 'name2', 'name3'];
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('My App Title'),
+          backgroundColor: Colors.blue,
+          centerTitle: true,
+        ),
+        // 2. Write your visual UI components here
+        body: Center(
+          child: Text('First item: ${names[0]}'),
+        ),
+      ),
+    );
+  }
+}
+
+

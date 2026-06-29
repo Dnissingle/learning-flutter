@@ -1,109 +1,49 @@
+
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-class Note {
-  String title;
-  String description;
-  bool isCompleted;
-  String toBuild;
-  int? estimatedTime;
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
-  Note(
-      {
-        required this.title,
-        required this.description,
-        required this.isCompleted,
-        required this.toBuild,
-        this.estimatedTime,
-      });
-
+  @override
+  State<MyApp> createState() => _MyAppState();
 }
 
-class MyApp extends StatelessWidget {
-  List<Note> notes = [Note(
-      title: 'Day 1',
-      description: 'Flutter and Dart SDK',
-      isCompleted: true,
-      toBuild: 'Installation and setup',
-      estimatedTime: 2
-  ),
-    Note(
-        title: 'Day 2',
-        description: 'Dart: Variables,Types,Functions',
-        isCompleted: true,
-        toBuild: 'Build simple Calculator',
-        estimatedTime: 2
-    ),
-    Note(
-      title: 'Day 3',
-      description: 'Dart: Class and Constructors',
-      isCompleted: true,
-      toBuild: 'Build Note Model',
-    ),
-    Note(
-        title: 'Day 4',
-        description: 'Flutter: MaterialApp, Scaffold, Container,Text',
-        isCompleted: true,
-        toBuild: 'Static Profile UI',
-        estimatedTime: 2
-    ),
-    Note(
-        title: 'Day 5',
-        description: 'Flutter: Row, Column, and Expanded widgets',
-        isCompleted: false,
-        toBuild: 'Simple Login UI(no logic)',
-        estimatedTime: 2
-    ),
-    Note(
-        title: 'Day 6',
-        description: 'Flutter: Stateful Widgets Basics',
-        isCompleted: false,
-        toBuild: 'Build: Counter app (with button and state change)',
-        estimatedTime: 2
-    ),
-    Note(
-        title: 'Day 7',
-        description: 'Mini Project',
-        isCompleted: false,
-        toBuild: 'Simple Todo UI(add static items, no storage yet)',
-        estimatedTime: 2
-    )
+class _MyAppState extends State<MyApp> {
+  // 1. Write your variables and data lists here (Marked as final)
+  List<String> tasks = ['Learn Flutter',
+  'Study CSIT',
+    'Exercise'
+    'Push to Github'
   ];
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text("Notes")),
-        body: ListView.builder(
-          itemCount: notes.length,
-          itemBuilder: (context, index) {
-            final note = notes[index];
-
-            return Card(
-              margin: EdgeInsets.all(10),
-              child: ListTile(
-                title: Text(note.title),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start, // Aligns text to the left
-                  children: [
-                    Text(note.description),
-                    Text(
-                      note.toBuild),
-                  ],
-                ),
-                trailing: Icon(
-                  note.isCompleted ? Icons.check : Icons.close,
-                  color: note.isCompleted ? Colors.green : Colors.red,
-                ),
-              ),
+        appBar: AppBar(
+          title: const Text('My App Title'),
+          backgroundColor: Colors.blue,
+          centerTitle: true,
+        ),
+        // 2. Write your visual UI components here
+        body: Center(
+          child:  ListView.builder(itemCount: tasks.length, itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(tasks[index]),
             );
           },
+          )
         ),
       ),
     );
   }
 }
+
+
